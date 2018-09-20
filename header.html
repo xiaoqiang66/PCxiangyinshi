@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.header{
+				width: 100%;
+				height: 350px;
+				background: url(img/banner.jpg) no-repeat;
+				z-index: -10;
+				background-size: 100%;
+				/*min-width: 768px;*/
+			}
+			
+			.header .c{
+				padding: 0;
+			}
+			
+			.c>div{
+				padding: 0;
+				text-align: center;
+				padding: 40px 0;
+				cursor: pointer;
+				color: white;
+				position: relative;
+			
+			}
+			.c>div>span{
+				color: white;
+				font-size: 10px;
+				
+			}
+			
+			.d{
+				padding: 60px 0;
+			}
+			.header .d>div{
+				padding:  0;
+				height: 35px;
+				background: url(img/icon-tb.png) no-repeat -5px -50px;
+			
+			}
+			.header .d>div:nth-child(2){
+				margin: 0 3px;
+				background-position-x: -47px;
+			}
+			.header .d>div:nth-child(3){
+				background-position-x: -88px;
+			}
+			.b{
+				background: #c6c4be;
+				text-align: center;
+				color: white;
+				padding: 40px 0;
+			}
+			.b:hover m{
+				color: red;
+			}
+			.b>div{
+				text-align: center;
+				font-size: 30px;
+				color: white;
+				
+			}
+			.header .p>div{
+				background: rgba(0,0,0,.5);
+				width: 100%;
+				height: 202px;
+				position: absolute;
+				top: 143px;
+				display: none;
+			}
+			
+			.header .p>div>dd{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				cursor: pointer;
+				color: white;
+			}
+			.header .p>div>dd:hover{
+				background: greenyellow;
+			}
+			.header a{
+				color: white;
+			}
+			.c div:hover{
+				background: #6da044;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header container-fluid">
+			
+			<div class="row" >
+				<div class="col-sm-2 "></div>
+				<div class="col-sm-8  a">
+					<div class="col-xs-2 b hidden-xs">
+						<div><span class="glyphicon glyphicon-leaf" style="color: white;"></span><m> Spa</m></div>
+						<m>Magic Of Soul</m>
+					</div>
+					<div class="col-xs-12 hidden-lg hidden-md hidden-sm" style="font-size: 20px;text-align: center;padding: 57px 0;background: #c6c4be;">
+						<span class="glyphicon glyphicon-th-list" style="cursor: pointer;" id="k"></span>
+					</div>
+					<div class="col-xs-8 c hidden-xs">
+						<div class="col-xs-1" style="background: transparent;"></div>
+						<div class="col-xs-2 ccc" ><a href="index.html#1">Home</a> <br /><span class="glyphicon glyphicon-home"></span> </div>
+						<div class="col-xs-2 ccc"><a href="index2.html#2">Service</a><br /><span class="glyphicon glyphicon-hand-right"></span></div>
+						<div class="col-xs-2 ccc"><a href="index3.html#3">About</a><br /><span class="glyphicon glyphicon-star-empty"></span></div>
+						<div class="col-xs-2 ccc"><a href="index4.html#4">Blog</a><br /><span class="glyphicon glyphicon-picture"></span></div>
+						<div class="col-xs-2 ccc"><a href="index5.html#5">Contact</a><br /><span class="glyphicon glyphicon-envelope"></span></div>
+						<div class="col-xs-1"  style="background: transparent;"></div>
+					</div>
+						
+					<div class="col-xs-2 d hidden-xs">
+						<div class="col-xs-3"></div>
+						<div class="col-xs-3"></div>
+						<div class="col-xs-3"></div>
+					</div>
+				</div>
+				<div class="col-sm-2 "></div>
+				
+			</div>
+			<div class="row p hidden-lg hidden-md hidden-sm ">
+				<div >
+					<dd><a href="index.html#1">Home</a></dd>
+					<dd><a href="index2.html#2">Service</a></dd>
+					<dd><a href="index3.html#3">About</a></dd>
+					<dd><a href="index4.html#4">Blog</a></dd>
+					<dd><a href="index5.html#5">Contact</a></dd>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		
+		$("#k").click(function(){
+			$(".header .p>div").slideDown()
+		})
+		var n = window.location.hash.slice(1);
+		console.log(n)
+		$(".header").find(".ccc").eq(n-1).css({"background":"#6da044"})
+		console.log($(".header").find(".dd").eq(n-1))
+		$(".header .p>div>dd").eq(n-1).css({"background":"greenyellow"})
+		
+		
+	})
+</script>
